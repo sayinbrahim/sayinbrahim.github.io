@@ -1,0 +1,34 @@
+---
+const categories = [
+  { label: 'Languages',       items: 'C#, TypeScript, Python, SQL' },
+  { label: '.NET',            items: 'ASP.NET Core, EF Core, Serilog, xUnit, Hangfire' },
+  { label: 'Frontend',        items: 'React, Vue.js, Astro, Tailwind CSS' },
+  { label: 'Data',            items: 'PostgreSQL, MSSQL, Oracle, Redis' },
+  { label: 'Infrastructure',  items: 'Docker, GitHub Actions, Azure' },
+  { label: 'AI Tooling',      items: 'Claude Code, Claude API, MCP' },
+];
+---
+
+<section class="mx-auto max-w-5xl px-6 py-24 md:py-32" id="stack">
+  <h2
+    class="font-serif mb-10 text-4xl font-medium tracking-tight md:text-5xl"
+    style="color: var(--text);"
+  >
+    What I Build With
+  </h2>
+
+  <div class="grid gap-4 sm:grid-cols-2" style="max-width: 65ch;">
+    {
+      categories.map(({ label, items }) => (
+        <div>
+          <span class="text-sm font-medium" style="color: var(--text);">
+            {label}
+          </span>
+          <span class="text-sm" style="color: var(--muted);">
+            &ensp;—&ensp;{items}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import WorkCard from '../components/WorkCard.astro';
+import Writing from '../components/Writing.astro';
+import Stack from '../components/Stack.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<BaseLayout>
+  <Hero />
+
+  <About />
+
+  <!-- Selected Work -->
+  <section class="mx-auto max-w-5xl px-6 py-24 md:py-32" id="work">
+    <h2
+      class="font-serif mb-10 text-4xl font-medium tracking-tight md:text-5xl"
+      style="color: var(--text);"
+    >
+      Selected Work
+    </h2>
+
+    <div class="flex flex-col gap-5">
+      <WorkCard
+        tag="Open Source · Active"
+        title="claude-code-for-dotnet"
+        description="Battle-tested skills, playbooks, and CLAUDE.md templates for shipping enterprise .NET code with Claude Code. Production patterns from regulated environments — audit-grade logging, EF Core migration safety, .NET legacy modernization. A living document, updated as patterns are validated in production."
+        badges={['Claude Code', '.NET 8', 'EF Core', 'Serilog', 'xUnit']}
+        linkLabel="View on GitHub"
+        linkHref="https://github.com/sayinbrahim/claude-code-for-dotnet"
+      />
+
+      <WorkCard
+        tag="Side Project · AI + Astrology"
+        title="ZephryAstro"
+        description="An AI-augmented astrology platform combining classical natal chart techniques (horary, mundane, sports astrology) with structured AI content generation. Daily Turkish-language content across Instagram and X, with a long-term aim of building a paid platform around natal and solar return reports."
+        badges={['.NET 8', 'React', 'SwissEphNet', 'Python', 'Pillow']}
+        linkLabel="Follow on Instagram"
+        linkHref="https://instagram.com/zephryastro"
+      />
+
+    </div>
+  </section>
+
+  <Writing />
+
+  <Stack />
+
+  <Contact />
+</BaseLayout>

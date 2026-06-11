@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500&display=swap');
+@import "tailwindcss";
+
+/* Class-based dark mode: .dark on <html> propagates to all descendants */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+}
+
+:root {
+  --bg: #fafaf7;
+  --text: #1a1a1a;
+  --muted: #666666;
+  --accent: #b8860b;
+  --border: rgba(0, 0, 0, 0.12);
+  --card-bg: #ffffff;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --text: #e8e8e8;
+  --muted: #888888;
+  --accent: #f5d76e;
+  --border: rgba(255, 255, 255, 0.1);
+  --card-bg: #111111;
+  color-scheme: dark;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+/* Smooth color transitions on theme switch */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}

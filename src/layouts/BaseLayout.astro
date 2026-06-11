@@ -1,0 +1,100 @@
+---
+import '../styles/global.css';
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Halil İbrahim Sayın — Senior .NET Developer',
+  description = 'Senior .NET Developer in Ankara, Turkey. Building production-grade .NET systems and open sourcing patterns that survive enterprise scrutiny.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <title>{title}</title>
+
+    <!-- Anti-FOUC: run before paint to apply saved theme -->
+    <script is:inline>
+      (function () {
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch (_) {}
+        // Default: dark mode
+        var useDark = stored ? stored === 'dark' : true;
+        if (useDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+
+  <body class="min-h-screen" style="background-color: var(--bg); color: var(--text);">
+
+    <!-- Sticky header -->
+    <header
+      id="site-header"
+      class="sticky top-0 z-50 w-full"
+      style="background-color: var(--bg); border-bottom: 1px solid transparent;"
+    >
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <a
+          href="#"
+          class="font-serif text-xl font-medium tracking-tight"
+          style="color: var(--text); text-decoration: none;"
+          aria-label="Home"
+        >
+          HS
+        </a>
+        <ThemeToggle />
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="py-8 text-center text-sm" style="color: var(--muted);">
+      <p>
+        © 2026 Halil İbrahim Sayın&nbsp;·&nbsp;Built with Astro&nbsp;·&nbsp;<a
+          href="https://github.com/sayinbrahim/sayinbrahim.github.io"
+          style="color: var(--muted); text-decoration: underline; text-underline-offset: 3px;"
+          >Source on GitHub</a
+        >
+      </p>
+    </footer>
+
+    <!-- Header scroll border -->
+    <script is:inline>
+      (function () {
+        var header = document.getElementById('site-header');
+        if (!header) return;
+        var onScroll = function () {
+          if (window.scrollY > 10) {
+            header.style.borderBottomColor = 'var(--border)';
+          } else {
+            header.style.borderBottomColor = 'transparent';
+          }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+      })();
+    </script>
+  </body>
+</html>
