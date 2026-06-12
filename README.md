@@ -1,3 +1,9 @@
+# Halil İbrahim Sayın
+
+<p align="center">Senior Software Engineer · Backend Architecture · Enterprise .NET Systems</p>
+
+<p align="center"><sub><i>Ankara, Türkiye</i></sub></p>
+
 # Astro Starter Kit: Minimal
 
 ```sh
