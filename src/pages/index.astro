@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
 import WorkCard from '../components/WorkCard.astro';
 import Writing from '../components/Writing.astro';
 import Stack from '../components/Stack.astro';
@@ -12,6 +13,8 @@ import Contact from '../components/Contact.astro';
   <Hero />
 
   <About />
+
+  <Experience />
 
   <!-- Selected Work -->
   <section class="mx-auto max-w-5xl px-6 py-24 md:py-32" id="work">
@@ -39,6 +42,14 @@ import Contact from '../components/Contact.astro';
         badges={['.NET 8', 'React', 'SwissEphNet', 'Python', 'Pillow']}
         linkLabel="Follow on Instagram"
         linkHref="https://instagram.com/zephryastro"
+      />
+
+      <WorkCard
+        tag="Case Study · Energy Sector"
+        title="Oracle to PostgreSQL Migration"
+        description="Led the migration of a multi-million-row enterprise dataset from a legacy Oracle deployment to PostgreSQL. Restructured schema patterns, rewrote Oracle-specific PL/SQL into PostgreSQL equivalents, and validated data integrity across the cutover — preserving query semantics and reporting pipeline performance while reducing licensing costs."
+        badges={['Oracle', 'PostgreSQL', 'PL/SQL', 'T-SQL', '.NET 8', 'EF Core']}
+        note="Case study available on request"
       />
 
     </div>

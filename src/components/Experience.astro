@@ -1,0 +1,94 @@
+---
+const positions = [
+  {
+    date: "Dec 2024 — Present",
+    title: "Senior Software Engineer · Enerjisa",
+    description:
+      "Own the .NET production stack behind Turkey's electricity market integrations (EPİAŞ, TEİAŞ, TPYS, CPS). Build high-volume EDW services ingesting millions of meter readings, automate daily energy data submission for three companies via TEİAŞ, and design Hangfire-based background job architecture that reduced manual submission workload by ~50%.",
+    badges: [".NET 8", "React", "Vue.js", "PostgreSQL", "SQL Server", "Oracle", "Hangfire", "Graylog"],
+  },
+  {
+    date: "Aug 2023 — Dec 2024",
+    title: "Senior Software Engineer · Koç Sistem",
+    description:
+      "Built end-to-end candidate and manager modules for an enterprise digital recruitment platform using .NET MVC and Azure deployment. Reduced manual recruitment operations workload by ~30% through data integrity-focused EF Core + MSSQL data layer design under Agile/Scrum cycles.",
+    badges: [".NET", "MVC", "Entity Framework", "MSSQL", "Azure", "Agile"],
+  },
+  {
+    date: "Feb 2022 — Aug 2023",
+    title: "Software Engineer · Havelsan",
+    description:
+      "Developed real-time C++ systems under DO-178C safety-critical avionics standards. Contributed to RTOS-based applications with GIS-POSIX and GIS-ARINC653 specifications, alongside .NET Core backend development for adjacent integration layers.",
+    badges: ["C++", "DO-178C", "RTOS", "GIS-POSIX", "GIS-ARINC653", ".NET Core"],
+  },
+  {
+    date: "Feb 2021 — Feb 2022",
+    title: "Avionics Software Engineer · Aselsan",
+    description:
+      "Engineered MIL-STD-1553B-compliant data communication infrastructure for Turkish indigenous helicopter control systems using C++ and IBM Rhapsody Rational IDE. Managed software configuration via JIRA and ClearQuest under military development standards.",
+    badges: ["C++", "MIL-STD-1553B", "IBM Rhapsody", "JIRA", "ClearQuest"],
+  },
+  {
+    date: "Nov 2019 — Feb 2021",
+    title: "Software Engineer · Başarsoft",
+    description:
+      "Led integration work on .NET Core desktop and web applications with MSSQL/Oracle backends. Built GIS integrations using OpenLayers and GeoServer via REST APIs, serving as integration lead on multiple geospatial projects.",
+    badges: [".NET Core", "MSSQL", "Oracle", "OpenLayers", "GeoServer", "REST API"],
+  },
+  {
+    date: "Nov 2017 — Nov 2019",
+    title: "Software Engineer · Bites Defence & Aerospace",
+    description:
+      "Built augmented reality training solutions with Unity and Vuforia. Developed C/C++ tracking programs with Qt framework and multi-threaded Linux messaging applications using .NET Core for defense training environments.",
+    badges: ["Unity", "Vuforia", "C/C++", "Qt", ".NET Core", "AR"],
+  },
+];
+---
+
+<section class="mx-auto max-w-5xl px-6 py-24 md:py-32" id="experience">
+  <h2
+    class="font-serif mb-12 text-4xl font-medium tracking-tight md:text-5xl"
+    style="color: var(--text);"
+  >
+    Experience
+  </h2>
+
+  <div class="flex flex-col gap-10">
+    {positions.map((pos) => (
+      <div class="grid gap-2 md:grid-cols-[120px_1fr] md:gap-8">
+        <div class="pt-0.5">
+          <p
+            class="text-xs italic leading-relaxed"
+            style="color: var(--muted); white-space: nowrap;"
+          >
+            {pos.date}
+          </p>
+        </div>
+
+        <div>
+          <p
+            class="mb-2 text-base font-semibold leading-snug"
+            style="color: var(--text);"
+          >
+            {pos.title}
+          </p>
+
+          <p class="mb-3 text-sm leading-relaxed" style="color: var(--muted);">
+            {pos.description}
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            {pos.badges.map((badge) => (
+              <span
+                class="rounded-sm px-2 py-0.5 text-xs"
+                style="font-family: var(--font-mono); color: var(--muted); border: 1px solid var(--border);"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
