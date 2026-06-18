@@ -27,6 +27,17 @@ import Contact from '../components/Contact.astro';
 
     <div class="flex flex-col gap-5">
       <WorkCard
+        tag="Open Source · Released on NuGet"
+        title="ef-migration-safety"
+        description="A .NET CLI tool that statically analyzes EF Core migration files and flags destructive operations, missing defaults, empty Down() methods, and unsafe rename operations before they reach production. Built with Roslyn; distributed as a global dotnet tool on NuGet."
+        badges={['.NET 8', 'Roslyn', 'CLI', 'Static Analysis', 'NuGet']}
+        linkLabel="View on GitHub"
+        linkHref="https://github.com/sayinbrahim/ef-migration-safety"
+        secondaryLinkLabel="Install via NuGet"
+        secondaryLinkHref="https://www.nuget.org/packages/EfMigrationSafety.Cli"
+      />
+
+      <WorkCard
         tag="Open Source · Active"
         title="claude-code-for-dotnet"
         description="A production-grade collection of skills, playbooks, and CLAUDE.md templates for shipping enterprise .NET code with Claude Code — designed around the patterns that survive audit and compliance review in regulated environments. Covers structured logging architecture, EF Core migration safety reviews, and legacy .NET modernization playbooks. Maintained as a living document."

@@ -6,11 +6,13 @@ export interface Props {
   badges?: string[];
   linkLabel?: string;
   linkHref?: string;
+  secondaryLinkLabel?: string;
+  secondaryLinkHref?: string;
   note?: string;
   muted?: boolean;
 }
 
-const { tag, title, description, badges = [], linkLabel, linkHref, note, muted = false } = Astro.props;
+const { tag, title, description, badges = [], linkLabel, linkHref, secondaryLinkLabel, secondaryLinkHref, note, muted = false } = Astro.props;
 ---
 
 <article
@@ -52,15 +54,28 @@ const { tag, title, description, badges = [], linkLabel, linkHref, note, muted =
 
   {
     linkLabel && linkHref ? (
-      <a
-        href={linkHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-1 text-sm font-medium"
-        style="color: var(--accent); text-decoration: none;"
-      >
-        {linkLabel}&nbsp;→
-      </a>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href={linkHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-sm font-medium"
+          style="color: var(--accent); text-decoration: none;"
+        >
+          {linkLabel}&nbsp;→
+        </a>
+        {secondaryLinkLabel && secondaryLinkHref && (
+          <a
+            href={secondaryLinkHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 text-sm font-medium"
+            style="color: var(--accent); text-decoration: none;"
+          >
+            {secondaryLinkLabel}&nbsp;→
+          </a>
+        )}
+      </div>
     ) : note ? (
       <p class="text-sm italic" style="color: var(--muted);">
         {note}
