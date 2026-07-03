@@ -27,42 +27,55 @@ import Contact from '../components/Contact.astro';
 
     <div class="flex flex-col gap-5">
       <WorkCard
-        tag="Open Source · Released on NuGet"
+        tag="Open Source · MCP · Roslyn"
+        title="dotnet-context-mcp"
+        description="Solution-aware Model Context Protocol server for .NET, built on Roslyn Workspace API. Gives Claude Code structured access to DbContexts, entities, migrations, and entity relationship graphs. Bridge MCP pattern: TypeScript protocol layer + .NET 8 CLI analysis layer."
+        badges={['.NET 8', 'TypeScript', 'Roslyn', 'MCP', 'npm']}
+        linkLabel="View on GitHub"
+        linkHref="https://github.com/sayinbrahim/dotnet-context-mcp"
+        secondaryLinkLabel="npm package"
+        secondaryLinkHref="https://www.npmjs.com/package/dotnet-context-mcp"
+      />
+
+      <WorkCard
+        tag="Open Source · Roslyn Analyzer · CLI"
         title="ef-migration-safety"
-        description="A .NET CLI tool that statically analyzes EF Core migration files and flags destructive operations, missing defaults, empty Down() methods, and unsafe rename operations before they reach production. Built with Roslyn; distributed as a global dotnet tool on NuGet."
-        badges={['.NET 8', 'Roslyn', 'CLI', 'Static Analysis', 'NuGet']}
+        description="Static analysis CLI for Entity Framework Core migrations. Detects risky operations before deployment: data loss patterns, SQL injection risks, missing defaults, cascading drops. 6 analyzers covering common EF Core migration hazards."
+        badges={['.NET 8', 'Roslyn', 'CLI', 'NuGet']}
         linkLabel="View on GitHub"
         linkHref="https://github.com/sayinbrahim/ef-migration-safety"
-        secondaryLinkLabel="Install via NuGet"
+        secondaryLinkLabel="NuGet package"
         secondaryLinkHref="https://www.nuget.org/packages/EfMigrationSafety.Cli"
       />
 
       <WorkCard
-        tag="Open Source · Active"
-        title="claude-code-for-dotnet"
-        description="A production-grade collection of skills, playbooks, and CLAUDE.md templates for shipping enterprise .NET code with Claude Code — designed around the patterns that survive audit and compliance review in regulated environments. Covers structured logging architecture, EF Core migration safety reviews, and legacy .NET modernization playbooks. Maintained as a living document."
-        badges={['Claude Code', '.NET 8', 'EF Core', 'Serilog', 'xUnit']}
-        linkLabel="View on GitHub"
-        linkHref="https://github.com/sayinbrahim/claude-code-for-dotnet"
+        tag="Contribution · Documentation"
+        title="Microsoft EF Core Documentation"
+        description="Contributor to the official Entity Framework Core documentation. Improvements to the migrations guides covering advanced scenarios: transactional application, multi-provider workflows, and managing migrations across teams."
+        badges={['EF Core', 'Documentation', 'Open Source']}
+        linkLabel="Merged PR #5390"
+        linkHref="https://github.com/dotnet/EntityFramework.Docs/pull/5390"
+        secondaryLinkLabel="PR #5402 (in review)"
+        secondaryLinkHref="https://github.com/dotnet/EntityFramework.Docs/pull/5402"
       />
 
       <WorkCard
-        tag="Side Project · AI + Astrology"
-        title="ZephryAstro"
-        description="A full-stack AI-augmented astrology platform combining classical natal chart computation (SwissEphNet) with structured content generation pipelines. Architected the .NET 8 backend, React frontend, and Python content automation layers — shipping daily Turkish-language content across Instagram and X, with a long-term aim of a paid natal and solar return reporting platform."
-        badges={['.NET 8', 'React', 'SwissEphNet', 'Python', 'Pillow']}
-        linkLabel="Follow on Instagram"
-        linkHref="https://instagram.com/zephryastro"
-      />
-
-      <WorkCard
-        tag="Case Study · Energy Sector"
+        tag="Case Study · Enterprise Migration"
         title="Oracle to PostgreSQL Migration"
-        description="Architected and executed the migration of a multi-million-row enterprise dataset from a legacy Oracle deployment to PostgreSQL — rewriting Oracle-specific PL/SQL into PostgreSQL equivalents, restructuring schema patterns, and validating data integrity across the cutover window. Preserved query semantics and reporting pipeline performance while reducing licensing costs."
-        badges={['Oracle', 'PostgreSQL', 'PL/SQL', 'T-SQL', '.NET 8', 'EF Core']}
+        description="Enterprise-scale database migration for a mission-critical energy sector system. Schema translation, stored procedure conversion, data pipeline migration, and zero-downtime cutover strategy across multiple environments."
+        badges={['Oracle', 'PostgreSQL', '.NET', 'Enterprise']}
         note="Case study available on request"
       />
 
+      <WorkCard
+        tag="Open Source · Playbooks"
+        title="claude-code-for-dotnet"
+        description="Skills, playbooks, and workflow templates for using Claude Code on .NET projects. Living document based on real-world usage patterns."
+        badges={['Claude Code', '.NET', 'Playbooks']}
+        linkLabel="View on GitHub"
+        linkHref="https://github.com/sayinbrahim/claude-code-for-dotnet"
+        muted={true}
+      />
     </div>
   </section>
 
