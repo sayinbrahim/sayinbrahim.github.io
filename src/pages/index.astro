@@ -38,6 +38,17 @@ import Contact from '../components/Contact.astro';
       />
 
       <WorkCard
+        tag="Open Source · VS Code Extension · MCP"
+        title="dotnet-context-mcp-vscode"
+        description="VS Code and Cursor extension for zero-config MCP server setup. Detects installed MCP clients (Claude Code, Cursor, Continue.dev, Windsurf), adds dotnet-context-mcp to their config with automatic backup, and provides a live sidebar tree view of solution health with status bar and reactive settings. Multi-marketplace publishing pipeline via GitHub Actions."
+        badges={['TypeScript', 'VS Code Extension API', 'Open VSX', 'MCP']}
+        linkLabel="Live on Open VSX"
+        linkHref="https://open-vsx.org/extension/sayinbrahim/dotnet-context-mcp"
+        secondaryLinkLabel="Source on GitHub"
+        secondaryLinkHref="https://github.com/sayinbrahim/dotnet-context-mcp-vscode"
+      />
+
+      <WorkCard
         tag="Open Source · Roslyn Analyzer · CLI"
         title="ef-migration-safety"
         description="Static analysis CLI for Entity Framework Core migrations. Detects risky operations before deployment: data loss patterns, SQL injection risks, missing defaults, cascading drops. 7 analyzers covering common EF Core migration hazards."
@@ -51,11 +62,11 @@ import Contact from '../components/Contact.astro';
       <WorkCard
         tag="Contribution · Documentation"
         title="Microsoft EF Core Documentation"
-        description="Contributor to the official Entity Framework Core documentation. Improvements to the migrations guides covering advanced scenarios: transactional application, multi-provider workflows, and managing migrations across teams."
+        description="Contributor to the official Entity Framework Core documentation. 2 merged PRs contributing to EF Core 9 breaking-changes documentation, covering advanced scenarios: transactional application, multi-provider workflows, and managing migrations across teams."
         badges={['EF Core', 'Documentation', 'Open Source']}
-        linkLabel="Merged PR #5390"
+        linkLabel="Merged: PR #5390 + PR #5402"
         linkHref="https://github.com/dotnet/EntityFramework.Docs/pull/5390"
-        secondaryLinkLabel="PR #5402 (in review)"
+        secondaryLinkLabel="PR #5402 (also merged)"
         secondaryLinkHref="https://github.com/dotnet/EntityFramework.Docs/pull/5402"
       />
 
